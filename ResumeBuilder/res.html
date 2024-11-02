@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Builder</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
+
+</head>
+<body>
+
+    <!-- Header Section with Navigation Links -->
+    <header>
+        <div class="header-container">
+            <h1>Resume Builder</h1>
+            <nav>
+                <ul>
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="profile.html">My Account</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <div class="container">
+        <h2>Build Your Professional Resume</h2>
+
+        <!-- Personal Information Section -->
+        <div class="section">
+            <h3>Personal Information</h3>
+            <div class="grid">
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" placeholder="Enter your full name" maxlength="40" pattern="[A-Za-z ]+" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" placeholder="Enter your email" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" placeholder="Enter your phone number" pattern="\d{10}" required>
+                </div>
+                <div class="form-group">
+                    <label for="address">Address</label>
+                    <input type="text" id="address" placeholder="Enter your address" maxlength="100" required>
+                </div>
+            </div>
+        </div>
+
+        <!-- Education Section -->
+        <div class="section">
+            <h3>Education</h3>
+            
+            <!-- High School Details -->
+            <h4>High School</h4>
+            <div class="grid">
+                <div class="form-group">
+                    <label for="highschool-institution">Institution</label>
+                    <input type="text" id="highschool-institution" placeholder="High School Name" maxlength="50" required>
+                </div>
+                <div class="form-group">
+                    <label for="highschool-year">Year of Passing</label>
+                    <input type="text" id="highschool-year" placeholder="Year (e.g., 2018)" pattern="\d{4}" required>
+                </div>
+                <div class="form-group">
+                    <label for="highschool-cgpa">High School CGPA</label>
+                    <input type="number" id="highschool-cgpa" placeholder="High School CGPA" step="0.01" max="10" required>
+                </div>
+            </div>
+
+            <!-- University Details -->
+            <h4>University</h4>
+            <div class="grid">
+                <div class="form-group">
+                    <label for="university-institution">Institution</label>
+                    <input type="text" id="university-institution" placeholder="University name" maxlength="50" required>
+                </div>
+                <div class="form-group">
+                    <label for="university-degree">Degree</label>
+                    <input type="text" id="university-degree" placeholder="Degree (e.g., B.Sc., MCA)" maxlength="20" required>
+                </div>
+                <div class="form-group">
+                    <label for="university-year">Year of Graduation</label>
+                    <input type="text" id="university-year" placeholder="Year (e.g., 2024)" pattern="\d{4}" required>
+                </div>
+                <div class="form-group">
+                    <label for="university-cgpa">University CGPA</label>
+                    <input type="number" id="university-cgpa" placeholder="University CGPA" step="0.01" max="10" required>
+                </div>
+            </div>
+        </div>
+
+        <!-- Links Section -->
+        <div class="section">
+            <h3>Links</h3>
+            <div class="grid">
+                <div class="form-group">
+                    <label for="github">GitHub Profile</label>
+                    <input type="url" id="github" placeholder="GitHub profile link" required>
+                </div>
+                <div class="form-group">
+                    <label for="linkedin">LinkedIn Profile</label>
+                    <input type="url" id="linkedin" placeholder="LinkedIn profile link" required>
+                </div>
+                <div class="form-group">
+                    <label for="leetcode">LeetCode Profile</label>
+                    <input type="url" id="leetcode" placeholder="LeetCode profile link" required>
+                </div>
+                <div class="form-group">
+                    <label for="gfg">GeeksforGeeks Profile</label>
+                    <input type="url" id="gfg" placeholder="GeeksforGeeks profile link" required>
+                </div>
+            </div>
+        </div>
+
+        <!-- Experience Section -->
+        <div class="section">
+            <h3>Work Experience</h3>
+            <div class="grid">
+                <div class="form-group">
+                    <label for="company">Company</label>
+                    <input type="text" id="company" placeholder="Company name" maxlength="50" required>
+                </div>
+                <div class="form-group">
+                    <label for="position">Position</label>
+                    <input type="text" id="position" placeholder="Position (e.g., Developer)" maxlength="30" required>
+                </div>
+                <div class="form-group">
+                    <label for="exp_year">Years of Experience</label>
+                    <input type="text" id="exp_year" placeholder="Years of Experience" pattern="\d+" required>
+                </div>
+            </div>
+        </div>
+
+        <!-- Skills Section -->
+        <div class="section">
+            <h3>Skills</h3>
+            <div class="form-group">
+                <label for="skills">Your skills (comma-separated)</label>
+                <input type="text" id="skills" placeholder="e.g., JavaScript, Python" required>
+            </div>
+        </div>
+
+        <!-- Hobbies Section -->
+        <div class="section">
+            <h3>Hobbies</h3>
+            <div class="form-group">
+                <label for="hobbies">Your hobbies (comma-separated)</label>
+                <input type="text" id="hobbies" placeholder="e.g., Reading, Traveling, Coding" required>
+            </div>
+        </div>
+
+        <!-- Resume Format Selection -->
+        <div class="section">
+            <h3>Select Resume Format</h3>
+            <div class="form-group">
+                <label>
+                    <input type="radio" name="resumeFormat" value="format1" checked> Format 1
+                </label>
+                <label>
+                    <input type="radio" name="resumeFormat" value="format2"> Format 2
+                </label>
+                
+            </div>
+        </div>
+
+        <!-- Generate Resume Button -->
+        <button id="generateButton">Generate Resume</button>
+    </div>
+
+    <!-- Footer Section with Contact Information and Social Media Links -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-links">
+                <p><strong>Contact Us:</strong></p>
+                <p>Phone: (123) 456-7890</p>
+                <p><a href="faq.html">FAQ</a> | <a href="support.html">Support</a></p>
+            </div>
+            <div class="social-media">
+                <p><strong>Follow Us:</strong></p>
+                <a href="https://www.facebook.com/" target="_blank">Facebook</a> | 
+                <a href="https://x.com/?lang=en" target="_blank">Twitter</a> | 
+                <a href="https://www.linkedin.com/" target="_blank">LinkedIn</a>
+            </div>
+        </div>
+        <p>&copy; 2024 Resume Builder Inc. | All Rights Reserved</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,170 @@
+/* General Reset */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #4f6d7a, #c0d6df);
+    color: #333;
+}
+
+/* Header */
+header {
+    width: 100%;
+    background-color: #4f6d7a;
+    color: #ffffff;
+    padding: 15px 0;
+    text-align: center;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+/* Navigation */
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav ul li {
+    list-style: none;
+    margin: 0 10px;
+}
+
+nav ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #c0d6df;
+}
+
+/* Get Started Button in Header */
+.get-started-button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #ffffff;
+    background-color: #4f6d7a;
+    border: none;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.get-started-button:hover {
+    background-color: #3d5257;
+    cursor: pointer;
+}
+
+/* Main Container */
+.container {
+    display: flex;
+    width: 100%;
+    max-width: 1200px;
+    margin: 20px auto;
+}
+
+/* Image Section */
+.image-section {
+    flex: 1;
+    position: relative;
+}
+
+.landing-image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    transition: filter 0.3s;
+}
+
+.image-section:hover .landing-image {
+    filter: brightness(70%);
+}
+
+/* Intro Section */
+.intro-section {
+    flex: 1;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.intro-section h2 {
+    color: #4f6d7a;
+    margin-bottom: 10px;
+}
+
+.intro-section p {
+    margin-bottom: 20px;
+    color: #555;
+}
+
+/* Footer */
+footer {
+    width: 100%;
+    background-color: #4f6d7a;
+    color: #ffffff;
+    padding: 20px 0;
+    text-align: center;
+    margin-top: auto;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.social-media {
+    margin: 10px 0;
+}
+
+.social-media a {
+    color: #ffffff;
+    margin: 0 5px;
+    text-decoration: none;
+}
+
+.social-media a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: column;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+        margin-bottom: 10px;
+    }
+
+    .container {
+        flex-direction: column;
+    }
+}
